@@ -1,65 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/SecondPage.dart';
+import 'package:flutter_application_2/Utils/MyRoutes.dart';
+import 'package:flutter_application_2/pages/Login.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: MyWidget(),
-  ));
+  runApp(const MyApp());
 }
 
-class MyWidget extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          // Image
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            child: Image.asset(
-              "assets/images/1.jpg",
-              fit: BoxFit.cover, // Adjust the BoxFit as needed
-            ),
-          ),
-          // Text below the image
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Text(
-              "Android introduction",
-              style: TextStyle(
-                fontSize: 18, // Adjust the font size as needed
-                fontWeight: FontWeight.bold, // Adjust the font weight as needed
-              ),
-            ),
-          ),
-          const Text(
-            "hello word",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-            child: Column(
-              children: [
-                TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                      hintText: "Enter User Name", labelText: "Name"),
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                      labelText: "Password", hintText: "Enter Password"),
-                ),
-                ElevatedButton(
-                  child: const Text("Submit"),
-                  onPressed: () => {TextStyle: TextButton.styleFrom()},
-                )
-              ],
-            ),
-          )
-        ],
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // TRY THIS: Try running your application with "flutter run". You'll see
+        // the application has a blue toolbar. Then, without quitting the app,
+        // try changing the seedColor in the colorScheme below to Colors.green
+        // and then invoke "hot reload" (save your changes or press the "hot
+        // reload" button in a Flutter-supported IDE, or press "r" if you used
+        // the command line to start the app).
+        //
+        // Notice that the counter didn't reset back to zero; the application
+        // state is not lost during the reload. To reset the state, use hot
+        // restart instead.
+        //
+        // This works for code too, not just values: Most code changes can be
+        // tested with just a hot reload.
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return MaterialApp(
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const Login(),
+        MyRoutes.homeRoute: (context) => const MyHomePage(title: 'My Home'),
+        MyRoutes.SecondRoute: (context) => SecondPage()
+      },
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
