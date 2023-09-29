@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       initialRoute: "/",
       routes: {
-        "/": (context) => const Login(),
+        "/": (context) => SecondPage(),
         MyRoutes.homeRoute: (context) => const MyHomePage(title: 'My Home'),
         MyRoutes.SecondRoute: (context) => SecondPage()
       },
