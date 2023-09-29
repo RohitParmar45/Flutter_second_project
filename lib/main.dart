@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/SecondPage.dart';
+import 'package:flutter_application_2/pages/SecondPage.dart';
 import 'package:flutter_application_2/Utils/MyRoutes.dart';
 import 'package:flutter_application_2/pages/Login.dart';
 import 'package:flutter_application_2/widgets/theme.dart';
