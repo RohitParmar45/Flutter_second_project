@@ -6,7 +6,7 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Catalog App"),
+        title: Text("Catalog App"),
       ),
       body: const Center(
         child: Text("Welcome to Second Page"),
