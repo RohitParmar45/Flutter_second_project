@@ -18,6 +18,7 @@ class _SecondPageState extends State<SecondPage> {
   }
 
   localdata() async {
+    await Future.delayed(const Duration(seconds: 2));
     var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
     var decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
@@ -35,14 +36,16 @@ class _SecondPageState extends State<SecondPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(18.0),
-        child: ListView.builder(
-          itemCount: CatalogModel.items.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ItemWidget(
-              item: CatalogModel.items[index],
-            );
-          },
-        ),
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (BuildContext context, int index) => ItemWidget(
+                  item: CatalogModel.items[index],
+                ),
+              )
+            : const Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: const MyDrawer(),
     );
