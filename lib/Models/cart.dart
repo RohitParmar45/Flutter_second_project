@@ -1,6 +1,11 @@
 import 'package:flutter_application_2/Models/Item.dart';
 
 class CartModel {
+  //singleton class
+  static final cartModel = CartModel._internal();
+  CartModel._internal();
+  factory CartModel() => cartModel;
+
   CatalogModel _catalog = CatalogModel();
 
   //store ids of each items
