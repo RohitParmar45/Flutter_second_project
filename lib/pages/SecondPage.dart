@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_2/Models/Item.dart';
@@ -35,7 +36,15 @@ class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.deepPurple,
+        child: Icon(
+          CupertinoIcons.cart,
+          color: Colors.white,
+        ),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,

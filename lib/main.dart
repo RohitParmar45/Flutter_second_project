@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -47,6 +48,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      themeMode: ThemeMode.system,
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
       initialRoute: "/",
       routes: {
         "/": (context) => SecondPage(),
