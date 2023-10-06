@@ -51,11 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
       themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: "/",
+      initialRoute: MyRoutes.loginRoute,
       routes: {
-        "/": (context) => SecondPage(),
+        "/": (context) => Login(),
         MyRoutes.homeRoute: (context) => const MyHomePage(title: 'My Home'),
-        MyRoutes.SecondRoute: (context) => SecondPage()
+        MyRoutes.SecondRoute: (context) => SecondPage(),
+        MyRoutes.loginRoute: (context) => Login()
       },
     );
   }
