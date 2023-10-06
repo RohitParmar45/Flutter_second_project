@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/pages/SecondPage.dart';
 import 'package:flutter_application_2/Utils/MyRoutes.dart';
 import 'package:flutter_application_2/pages/Login.dart';
+import 'package:flutter_application_2/pages/cart_page.dart';
 import 'package:flutter_application_2/widgets/theme.dart';
 
 void main() {
@@ -56,7 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
         "/": (context) => Login(),
         MyRoutes.homeRoute: (context) => const MyHomePage(title: 'My Home'),
         MyRoutes.SecondRoute: (context) => SecondPage(),
-        MyRoutes.loginRoute: (context) => Login()
+        MyRoutes.loginRoute: (context) => Login(),
+        MyRoutes.cartPage: (context) => CartPage()
       },
     );
   }

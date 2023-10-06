@@ -13,6 +13,14 @@ class CatalogModel {
         image:
             "https://i5.walmartimages.com/asr/efecddbd-aa8d-45e3-9743-b49b25471f40.bc852a00bbf5df1136e4bbc2fb435cda.jpeg"),
   ];
+
+  static Item getbyId(int id) {
+    return items.firstWhere((element) => element.id == id, orElse: null);
+  }
+
+  static Item getbyPos(int pos) {
+    return items[pos];
+  }
 }
 
 class Item {

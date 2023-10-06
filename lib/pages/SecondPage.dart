@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_2/Models/Item.dart';
+import 'package:flutter_application_2/Utils/MyRoutes.dart';
+import 'package:flutter_application_2/pages/cart_page.dart';
 import 'package:flutter_application_2/widgets/home_widget/catalog_header.dart';
 import 'package:flutter_application_2/widgets/home_widget/catalog_list.dart';
 import 'package:flutter_application_2/widgets/theme.dart';
@@ -38,7 +40,10 @@ class _SecondPageState extends State<SecondPage> {
     return Scaffold(
       backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CartPage()));
+        },
         backgroundColor: Colors.deepPurple,
         child: Icon(
           CupertinoIcons.cart,
