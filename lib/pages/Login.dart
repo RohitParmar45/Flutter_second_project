@@ -39,24 +39,16 @@ class LoginState extends State<Login> {
                 left: 0,
                 right: 0,
                 child: Image.asset(
-                  "assets/images/1.jpg",
+                  "assets/images/loginpage.png",
                   fit: BoxFit.cover, // Adjust the BoxFit as needed
                 ),
               ),
               // Text below the image
               const Padding(
                 padding: EdgeInsets.all(16.0),
-                child: Text(
-                  "Android introduction",
-                  style: TextStyle(
-                    fontSize: 18, // Adjust the font size as needed
-                    fontWeight:
-                        FontWeight.bold, // Adjust the font weight as needed
-                  ),
-                ),
               ),
               Text(
-                "hello word $name",
+                "WELCOME $name",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               Padding(

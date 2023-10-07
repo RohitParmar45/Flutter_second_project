@@ -51,7 +51,7 @@ class _CartTotal extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: "Buying not supported".text.make()));
             },
-            child: Text("Buy").text.make(),
+            child: Text("Buy").text.color(Colors.white).make(),
           )
         ],
       ).pOnly(left: 12, right: 12),
